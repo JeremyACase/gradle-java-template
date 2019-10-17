@@ -1,0 +1,12 @@
+/**
+* So as to avoid sending username/password in clear-text, copy/paste the following 
+* lines into your user home directory under ~./gradle into a new file called "gradle.properties".
+*
+* You will need to obviously place your own username and password in the appropriate spots.
+*
+* Gradle will then use this file to deploy/pull from Artifactory using those credentials, thus
+* avoiding sending any credentials in clear-text.
+*/
+artifactory_user=myUserName
+artifactory_password=myPassword
+artifactory_contextUrl=http://192.168.116.151:8081/artifactory
