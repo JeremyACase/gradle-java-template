@@ -26,7 +26,7 @@ public class PointerGraph extends AbstractGraph<Integer> {
      * @param leftVertex The vertex to add a neighbor to.
      * @param rightVertex The neighbor to add for the vertex.
      */
-    public void addEdge(Integer leftVertex, Integer rightVertex) {
+    public void addEdge(final Integer leftVertex, final Integer rightVertex) {
         if (this.graph.containsKey(leftVertex)) {
             var neighbors = this.graph.get(leftVertex);
             if (!neighbors.contains(rightVertex)) {
@@ -42,7 +42,7 @@ public class PointerGraph extends AbstractGraph<Integer> {
      * Add a brand new vertex to this graph.
      * @param vertex The new vertex being added.
      */
-    public void addVertex(Integer vertex) {
+    public void addVertex(final Integer vertex) {
         if (!this.graph.containsKey(vertex)) {
             this.graph.put(vertex, new ArrayList<>());
         }
@@ -53,7 +53,7 @@ public class PointerGraph extends AbstractGraph<Integer> {
      * @param leftVertex The vertex to remove a neighbor from.
      * @param rightVertex The neighbor vertex to remove.
      */
-    public void removeEdge(Integer leftVertex, Integer rightVertex) {
+    public void removeEdge(final Integer leftVertex, final Integer rightVertex) {
         if (this.graph.containsKey(leftVertex)) {
             this.graph.get(leftVertex).remove(rightVertex);
         }
@@ -64,7 +64,7 @@ public class PointerGraph extends AbstractGraph<Integer> {
      * graph's vertices to remove any edges based on this vertex.
      * @param vertex The vertex to add.
      */
-    public void removeVertex(Integer vertex) {
+    public void removeVertex(final Integer vertex) {
         var iterator = this.graph.entrySet().iterator();
         while (iterator.hasNext()) {
             var pair = iterator.next();
