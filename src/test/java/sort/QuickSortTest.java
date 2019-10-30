@@ -57,6 +57,30 @@ public class QuickSortTest {
     }
 
     /**
+     * Assert that our quick sort works as intended.
+     */
+    @Test
+    public void testQuickSortIsValid3() {
+        var list = new ArrayList<Integer>();
+        list.add(5);
+        list.add(3);
+        list.add(1);
+        list.add(8);
+        list.add(7);
+        list.add(2);
+        list.add(9);
+        var quickSort = new QuickSort();
+        quickSort.sort(list);
+        var valid = true;
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) > list.get(i + 1)) {
+                valid = false;
+            }
+        }
+        org.junit.Assert.assertTrue(valid);
+    }
+
+    /**
      * Assert that our implementation handles empty lists.
      */
     @Test
@@ -73,6 +97,7 @@ public class QuickSortTest {
     /**
      * Assert that our list can handle huge, randomized lists.
      */
+    @Test
     public void testRandomHugeListIsValid() {
         var size = 2500;
         var rand = new Random();

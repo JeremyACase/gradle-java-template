@@ -31,11 +31,13 @@ public class QuickSort implements ISort<Integer> {
             if (list.get(j) < pivot) {
                 i++;
                 var placeHolder = list.get(i);
+                System.out.println(placeHolder + " -> " + list.get(j));
                 list.set(i, list.get(j));
                 list.set(j, placeHolder);
             }
         }
         var placeHolder = list.get(i  + 1);
+        System.out.println(placeHolder + " -> " + list.get(high));
         list.set(i + 1, list.get(high));
         list.set(high, placeHolder);
         return i + 1;
